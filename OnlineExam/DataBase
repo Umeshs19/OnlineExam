@@ -1,0 +1,36 @@
+--create table Admin_Login(adminid int NOT NULL primary key, email nvarchar(50) NOT NULL, password nvarchar(50) NOT NULL)
+
+--create table Admin_Register(adminid int NOT NULL primary key, FullName nvarchar(50) NOT NULL, email nvarchar(50) NOT NULL, password nvarchar(50) NOT NULL, adminDob nvarchar(50) NOT NULL, mobile nvarchar(50) NOT NULL, city nvarchar(50) NOT NULL, state nvarchar(50) NOT NULL)
+
+
+--create table Registration(userId int NOT NULL primary key, fullName nvarchar(50) NULL, email nvarchar(50) NULL, password nvarchar(50) NULL, dateOfBirth nvarchar(50) NULL,mobile nvarchar(50) NULL, city nvarchar(50) NULL, state nvarchar(50) NULL, qualification nvarchar(50) NULL, yearOfCompletion nvarchar(50) NULL)
+
+
+--create table Login(userId int foreign key references Registration(userId) NOT NULL , email nvarchar(50) NOT NULL, password nvarchar(50) NOT NULL)
+
+--create table Report_card(marks int NULL, examLevel nvarchar(50) NULL, examSpec nvarchar(50) NULL)
+
+--create table Question_Bank(questionId int NOT NULL primary key, examSpecialization nvarchar(500) NOT NULL, examLevel nvarchar(500) NOT NULL, question nvarchar(500) NOT NULL, optionA nvarchar(500) NOT NULL, optionB nvarchar(500) NOT NULL,optionC nvarchar(500) NOT NULL,optionD nvarchar(500) NOT NULL,answer nvarchar(500) NOT NULL)
+
+--create table Search_Students(Technology nvarchar(500) NOT NULL, State nvarchar(500) NOT NULL,City nvarchar(500) NOT NULL,Levels int NOT NULL, Marks int NOT NULL)
+
+--Insert into  Admin_Login  (adminid,email,password) values (101,'admin@gmail.com','admin123')
+--Insert into  Admin_Login (adminid,email,password) values (103,'kalyan@gmail.com','kalyan123'),(102,'umesh@gmail.com','umesh123')
+
+--Insert into Admin_Register(adminid, FullName, email,password, adminDob, mobile,city,state)values(101, 'Satyamadhuri', 'admin@gmail.com', 'admin123','23-Jun-2000','6302555024','Hyderabad','AndhraPradesh')
+--Insert into Admin_Register(adminid, FullName, email,password, adminDob, mobile,city,state)values(100, 'Umesh', 'umesh@gmail.com', 'umesh123','2-sep-2001','7738435221','Mumbai','Maharashtra')
+
+--Insert into Admin_Register(adminid, FullName, email,password, adminDob, mobile,city,state)values(103, 'Kalyan', 'kalyan@gmail.com', 'kalyan123','19-oct-2000','9398780800','Hyderabad','AndhraPradesh')
+
+--insert into Registration(userId,fullName,email,password,dateOfBirth,mobile,city,state,qualification,yearOfCompletion)values(201,'Sa tyaAyyala','user@123','user123','22-Aug-2000','7095803191','Hyderabad','AndhraPradesh','BCA','2022'),(202,'KalyanKeta','venkat@123','venkat123','22-oct-2000','7095812345','Hyderabad','AndhraPradesh','BCA','2022'),(203,'UmeshSanas','sanas@123','sanas123','22-dec-2001','6301245987','Mumbai','Maharashtra','BCA','2022')
+
+
+--insert into Login(userId,email,password)values(201,'user@123','user123'),(202,'venkat@123','venkat123'),(203,'sanas@123','sanas123')
+
+--insert into Report_card(marks, examLevel, examSpec)values(50,'Level2','Java'),(35,'Level2','.net'),(25,'Level1','sql')
+
+--insert into Question_Bank(questionId,examSpecialization,examLevel,question,optionA,optionB,optionC,optionD,answer)values(1,'sql','level1','SQL views also known as', 'Simple tables','Virtual tables','Complex tables','Actual tables','B')
+
+--insert into Question_Bank(questionId,examSpecialization,examLevel,question,optionA,optionB,optionC,optionD,answer)values(2,'sql','level1','How many primary questions can have in a table', 'Only 1','Only 2','Many', 'Based on Db' ,'A'),(3,'sql','level1','Which is also known as INNER JOIN?',  'Self Join', 'Equi Join', 'Non Equi Join','None of the above','B'),(11,'sql','level2','Which of the following is not a DDL command?','DELETE','REMOVE','DROP','TRUNCATE','D'),(12,'sql','level2','________________ is not a category of SQL command','TCL','SCL','DDL','DCL','B'),(13,'sql','leve2','If you don’t specify ASC or DESC after a SQL ORDER BY clause, the following is used by default ______________','ASC','DESC','There is no default value','None of the mentioned','A')
+
+--insert into Search_Students(Technology,state,city,levels,Marks)values('java','AndhraPradesh','Vizag',1,'35'),('sql','Maharashtra','Pune',2, '40'),('php','AndhraPradesh','Kakinada',3,'50'),('java','AndhraPradesh','Vizag',2,'40'),('sql','Maharashtra','Pune',1, '50'),('php','AndhraPradesh','Kakinada',2,'50'),('Python','AndhraPradesh','Vizag',2,'50'),('.net','Maharashtra','Pune',1, '30'),('sql','AndhraPradesh','Kakinada',3,'30')
